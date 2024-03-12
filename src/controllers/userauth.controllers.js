@@ -46,7 +46,7 @@ const UserAuthentication = asyncHandler(async(req,res)=>{
         // Handle errors
         console.error("Error authenticating user:", error);
         throw new ApiError(500, "Failed to authenticate user");
-    }
+    }  
 });    
 
 

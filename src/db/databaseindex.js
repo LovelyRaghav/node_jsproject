@@ -1,21 +1,20 @@
 
 import {createPool} from 'mysql2';
+import dotenv from 'dotenv'
 
 
-
-  const Pool = createPool({
-        host: '208.109.33.187',
-        user: 'rmUser',
-        password: 'Trayi@123',
-        database: 'kabadijeeproddb',
-        port : 3306,
-        connectionLimit : 50
-    });
+dotenv.config();
 
 
+const Pool  = createPool({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: parseInt(process.env.DB_PORT), // Parse the port to ensure it's an integer
+  connectionLimit: 50
+})
 
-export default Pool;           
 
-
-
+export default Pool;
 

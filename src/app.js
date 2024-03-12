@@ -28,24 +28,14 @@ import userRouter from './routes/user.routes.js'
 //routes declaration
 app.use("/api/v1/users",userRouter)  // this line trigger in controller   and this /api/v1/users become prefix
 
-
-
-// app.get('/get-schema-data/:schemaName', (req, res) => {
-//     const schemaName = req.params.schemaName;
-
-//     // Check if the requested schema exists
-//     if (schemasData.hasOwnProperty(schemaName)) {
-//         const schemaData = schemasData[schemaName];
-//         res.json(schemaData); // Return the data for the requested schema
-//     } else {
-//         res.status(404).send('Schema not found'); // Handle case where schema doesn't exist
-//     }
-// });
+ 
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send("Internal Server Error");
+});
 
 
 
-
-//export {app}
 
 
 

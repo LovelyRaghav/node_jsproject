@@ -10,7 +10,6 @@ import  logger  from '../config/logger.js';
 
 
 
-
 const router = Router();
 
 const routes = [
@@ -44,21 +43,5 @@ routes.forEach(route => {
 });
 
 
-
-
-// app.get('/get-schema-data/:schemaName', (req, res) => {
-//     const schemaName = req.params.schemaName;
-
-//     // Fetch data for the requested schema from the database
-//     const query = `SELECT * FROM ${schemaName}`;
-//     connection.query(query, (err, results) => {
-//         if (err) {
-//             console.error('Error querying database:', err);
-//             res.status(500).send('Error retrieving data from database');
-//             return;
-//         }
-//         res.json(results); // Return the fetched data as JSON response
-//     });
-// });
 
 export default router 
